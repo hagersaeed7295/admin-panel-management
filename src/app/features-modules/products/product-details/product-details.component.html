@@ -1,0 +1,28 @@
+<header class="modal-header">
+    <div class="row w-100 align-items-center">
+        <div class="col-md-11 col-10">
+            <h3 class="modal-title">{{ 'products.Products' | translate }}</h3>
+        </div>
+
+        <div class="col-md-1  col-2 justify-content-end">
+            <button type="button" class="btn p-0 close" data-dismiss="alert" (click)="cancel()">
+                &times;
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<div class="modal-body">
+    <div class="row item-container" *ngIf="selectedItems">
+        <div class="col-md-4 col-12 img-container">
+            <img src="{{selectedItems.image}}" class="card-img-top" alt="{{selectedItems.title}}">
+        </div>
+        <div class="col-md-8 col-12">
+            <h4>{{selectedItems.title}}</h4>
+            <h6 class="text-secondary">{{selectedItems.category}} - {{selectedItems.price}} $ </h6>
+            <h6>{{selectedItems.description}}</h6>
+        </div>
+    </div>
+
+</div>

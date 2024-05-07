@@ -1,0 +1,74 @@
+{
+    "login": {
+        "Login": "تسجيل الدخول",
+        "Welcome": "مرحباً",
+        "Username": "اسم المستخدم",
+        "Password": "كلمة المرور",
+        "YourPassword": "أدخل كلمة المرور",
+        "YourUsername": "أدخل اسم المستخدم",
+        "UsernameRequired": "اسم المستخدم مطلوب!",
+        "PasswordRequired": "كلمة المرور مطلوبة",
+        "PasswordCharactersLength": "يجب أن تتكون كلمة المرور من 4 أحرف على الأقل",
+        "InvalidEntered": "خطأ في اسم المستخدم أو كلمة مرور. يرجى المراجعة"
+    },
+    "general": {
+        "language": "English",
+        "Home": "الصفحة الرئيسية",
+        "desc": "desc",
+        "asc": "asc",
+        "NoDataFound": "لم يتم العثور على بيانات",
+        "Search": "بحث",
+        "Filter": "تصفية",
+        "FilterBy": "تصفية حسب",
+        "SortedBy": "مرتبة حسب",
+        "Entity": "الكيان",
+        "WelcomeTo": "مرحبًا بك في لوحة الإدارة",
+        "page_Not_Found": "الصفحة غير موجودة",
+        "welcomeAwesome": "مرحبًا بك في لوحة الإدارة الرائعة الخاصة بك!"
+    },
+    "header": {
+        "Hello": "أهلا",
+        "SignOut": "تسجيل الخروج"
+    },
+    "footer": {
+        "copy-right": "© 2024، جميع الحقوق محفوظة"
+    },
+    "products": {
+        "Products": "المنتجات",
+        "productList": "قائمة المنتجات",
+        "title": "الاسم",
+        "price": "السعر",
+        "category": "الفئة",
+        "description": "الوصف",
+        "AddProduct": "اضافة منتج جديد",
+        "UpdateProduct": "تعديل المنتج"
+    },
+    "categories": {
+        "categories": "الفئات",
+        "categoryList": "قائمة الفئات",
+        "addCategory": "إضافة فئة",
+        "AllCategories": "كل الفئات"
+    },
+    "sweetAlert": {
+        "success": "نجاح",
+        "ok": "تم",
+        "AreYouSure": "هل انت متاكد؟",
+        "yes": "نعم",
+        "no": "لا",
+        "cancel": "إلغاء",
+        "Failed": "فشل"
+    },
+    "validationMsg": {
+        "CategoryRequired": "اختيار القسم مطلوب!",
+        "PriceRequired": "السعر مطلوب",
+        "ProductAddedSuccess": "تمت إضافة المنتج بنجاح",
+        "ProductDeletedSuccessfully": "تم حذف المنتج بنجاح",
+        "TitleRequired": "العنوان مطلوب",
+        "ProductUpdatedSuccessfully": "تم تحديث المنتج بنجاح",
+        "descriptionRequired": "الوصف مطلوب",
+        "descriptionMustBe": "يجب أن يكون الوصف 10 أحرف على الأقل",
+        "descriptionExceed": "الوصف يجب ان لا يتعدي الحد الاقصي",
+        "UnableAddProduct": "لم يتم اضافة المنتج",
+        "UnableUpdateProduct": "غير قادر على تعديل المنتج"
+    }
+}

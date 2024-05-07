@@ -1,0 +1,50 @@
+<header class="modal-header">
+    <div class="row w-100">
+        <div class="col-11">
+            <h3 class="modal-title">
+              <span *ngIf="!inEditMode" >{{ 'products.AddProduct' | translate }}</span>
+              <span *ngIf="inEditMode">{{'products.UpdateProduct' | translate}}</span>
+            </h3>
+        </div>
+        <div class="col-1 justify-content-end text-end"  *ngIf="!inEditMode">
+            <button type="button" class="btn p-0 close" data-dismiss="alert" (click)="cancel()">
+                &times;
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<div class="modal-body">
+    <form [formGroup]="addCategoryForm"
+    name="addCategoryForm"
+    novalidate
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="form-group">
+      <label for="title">{{ 'products.title' | translate }}</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        [placeholder]="'products.title' | translate"
+         formControlName="title"
+        required
+        [ngClass]="{ 'is-invalid':  (addCategoryForm.controls['title'].touched) && addCategoryForm.controls['title'].invalid}"
+      />
+      <div *ngIf="(addCategoryForm.controls['title'].touched) && addCategoryForm.controls['title'].invalid" class="invalid-feedback">
+        {{'validationMsg.TitleRequired' | translate}}
+      </div>
+    </div>
+
+      <button class="btn btn-primary btn-block" [disabled]="loading || addCategoryForm.invalid">
+        <span *ngIf="!inEditMode" >{{ 'products.AddProduct' | translate }}</span>
+        <span *ngIf="inEditMode">{{'products.UpdateProduct' | translate}}</span>
+      </button>
+
+  </form>
+  </div>
+
+
+
+

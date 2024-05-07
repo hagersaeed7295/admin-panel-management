@@ -1,0 +1,108 @@
+<header class="modal-header">
+    <div class="row w-100">
+        <div class="col-11">
+            <h3 class="modal-title">
+              <span *ngIf="!inEditMode" >{{ 'products.AddProduct' | translate }}</span>
+              <span *ngIf="inEditMode">{{'products.UpdateProduct' | translate}}</span>
+            </h3>
+        </div>
+        <div class="col-1 justify-content-end text-end"  *ngIf="!inEditMode">
+            <button type="button" class="btn p-0 close" data-dismiss="alert" (click)="cancel()">
+                &times;
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<div class="modal-body">
+    <form [formGroup]="addProductForm"
+    name="addProductForm"
+    novalidate
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="form-group">
+      <label for="title">{{ 'products.title' | translate }}</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        [placeholder]="'products.title' | translate"
+         formControlName="title"
+        required
+        [ngClass]="{ 'is-invalid':  (addProductForm.controls['title'].touched) && addProductForm.controls['title'].invalid}"
+      />
+      <div *ngIf="(addProductForm.controls['title'].touched) && addProductForm.controls['title'].invalid" class="invalid-feedback">
+        {{'validationMsg.TitleRequired' | translate}}
+      </div>
+    </div>
+
+   
+
+
+    <div class="form-group">
+      <label for="description">{{ 'products.description' | translate }}</label>
+      <textarea
+        type="text"
+        class="form-control"
+        name="description"
+        [placeholder]="'products.description' | translate"
+         formControlName="description"
+        required
+        minlength="10"
+        maxlength="1000"
+        [ngClass]="{ 'is-invalid':  (addProductForm.controls['description'].touched)  && addProductForm.controls['description'].errors }"
+      ></textarea>
+      <div *ngIf="(addProductForm.controls['description'].touched)  && addProductForm.controls['description'].errors" class="invalid-feedback">
+        <div *ngIf="addProductForm.controls['description'].errors['required']">{{'validationMsg.descriptionRequired' | translate}}</div>
+        <div *ngIf="addProductForm.controls['description'].errors['minlength']">
+          {{'validationMsg.descriptionMustBe' | translate}}
+        </div>
+        <div *ngIf="addProductForm.controls['description'].errors['maxlength']">
+            {{'validationMsg.descriptionExceed' | translate}}
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="price">{{ 'products.price' | translate }}</label>
+        <input
+          type="number"
+          class="form-control"
+          name="price"
+          [placeholder]="'products.price' | translate"
+           formControlName="price"
+          required
+          min="1"
+          [ngClass]="{ 'is-invalid':  (addProductForm.controls['price'].touched)  && addProductForm.controls['price'].errors }"
+        />
+        <div *ngIf=" (addProductForm.controls['price'].touched)   && addProductForm.controls['price'].errors" class="invalid-feedback">
+          {{'validationMsg.PriceRequired' | translate}}
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="category">{{ 'products.category' | translate }}</label>
+        <select class="form-select" 
+        [ngClass]="{ 'is-invalid':   (addProductForm.controls['category'].touched)   && addProductForm.controls['category'].errors }"
+        required aria-label="Category"   formControlName="category" name="category">
+            <option *ngFor="let cat of allCategories" value="{{cat}}" >{{cat}}</option>
+          </select>
+
+        <div *ngIf=" (addProductForm.controls['category'].touched)   && addProductForm.controls['category']" class="invalid-feedback">
+            {{'validationMsg.CategoryRequired' | translate}}
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" [disabled]="loading || addProductForm.invalid">
+        <span *ngIf="!inEditMode" >{{ 'products.AddProduct' | translate }}</span>
+        <span *ngIf="inEditMode">{{'products.UpdateProduct' | translate}}</span>
+      </button>
+
+  </form>
+  </div>
+
+
+
+
